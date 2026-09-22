@@ -110,7 +110,7 @@ Unlike comparisons where the "better" option can flip depending on category, her
 
 1. Both metrics separate the strategies at every length tested - all 6 length × metric comparisons are significant (CI excludes 0).
 2. The gap is not fixed - it grows substantially. Rep-3's disadvantage for greedy nearly triples (−0.253 → −0.638); Distinct-2's more than doubles (+0.274 → +0.618).
-3. Greedy's own repetition compounds over time — its Rep-3 climbs from 0.261 to 0.668 purely as a function of length, independent of any comparison to top-p.
+3. Greedy's own repetition compounds over time - its Rep-3 climbs from 0.261 to 0.668 purely as a function of length, independent of any comparison to top-p.
 4. Top-p stays comparatively flat - Rep-3 never exceeds 0.03, Distinct-2 never drops below 0.92, across all three lengths.
 
 ## Hypothesis Evaluation
@@ -123,16 +123,16 @@ Going in, the assumption was that top-p might also degrade somewhat with length,
 
 ## Visualization
 
-- effect_size_growth.png — the headline figure: effect size (top-p − greedy) vs. length, both metrics
+- effect_size_growth.png - the headline figure: effect size (top-p − greedy) vs. length, both metrics
 - bar_rep3.png, bar_distinct2.png - grouped bars by strategy and length, with CI
 - plot_rep3.png, plot_distinct2.png - line plots of each metric vs. length
 - boxplot_distribution_200tok.png - per-prompt spread at 200 tokens, not just the mean
 
 ## Limitations
 
-- Only one top-p value (p=0.9) was tested — no top-k or temperature sampling
+- Only one top-p value (p=0.9) was tested - no top-k or temperature sampling
 - 20 prompts is a controlled but small, non-benchmark sample
-- Rep-3/Distinct-2 are surface-level lexical measures — they say nothing about coherence, factuality, or fluency
+- Rep-3/Distinct-2 are surface-level lexical measures - they say nothing about coherence, factuality, or fluency
 - Findings are specific to GPT-2 Small (124M); larger models likely degenerate less under greedy decoding
 - Metrics are computed on BPE tokens, not word-level units, so they aren't directly numerically comparable to word-level implementations
 
