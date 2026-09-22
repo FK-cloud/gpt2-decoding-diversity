@@ -138,7 +138,7 @@ Going in, the assumption was that top-p might also degrade somewhat with length,
 
 ## Interpretation
 
-A significant Rep-3/Distinct-2 gap doesn't by itself mean top-p output is "better" — it means top-p text is measurably less repetitive and more lexically varied. Diversity is not the same as quality; a highly varied continuation can still be incoherent. What this experiment supports is a narrower claim: for this GPT-2 Small setup, the surface-level repetition/diversity gap between the two decoding strategies is real, and it grows with length.
+A significant Rep-3/Distinct-2 gap doesn't by itself mean top-p output is "better" it means top-p text is measurably less repetitive and more lexically varied. Diversity is not the same as quality; a highly varied continuation can still be incoherent. What this experiment supports is a narrower claim: for this GPT-2 Small setup, the surface-level repetition/diversity gap between the two decoding strategies is real, and it grows with length.
 
 ---
 
@@ -167,7 +167,7 @@ gpt2-decoding-diversity/
 
 ## Conclusion
 
-This project compared greedy decoding and top-p sampling in GPT-2 Small on two automatic metrics across three generation lengths, using paired bootstrap inference. Top-p was significantly less repetitive and more diverse than greedy at every length, and — more notably — that advantage roughly tripled (Rep-3) and doubled (Distinct-2) between 50 and 200 tokens. Greedy's own degeneration compounds with length; top-p's does not. These results are consistent with the likelihood–quality paradox described by Holtzman et al. (2020).
+This project compared greedy decoding and top-p sampling in GPT-2 Small on two automatic metrics across three generation lengths, using paired bootstrap inference. Top-p was significantly less repetitive and more diverse than greedy at every length, and more notably that advantage roughly tripled (Rep-3) and doubled (Distinct-2) between 50 and 200 tokens. Greedy's own degeneration compounds with length; top-p's does not. These results are consistent with the likelihood–quality paradox described by Holtzman et al. (2020).
 
 ## Author
 
