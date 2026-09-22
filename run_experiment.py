@@ -1,7 +1,6 @@
 # generates 80 continuations (20 prompts x 1 greedy + 3 top-p runs),
 # scores Rep-3 and Distinct-2 at 50/100/200 tokens, averages the top-p
 # seeds per prompt, then does the paired bootstrap and the length-effect
-# test. everything gets saved to results/
 
 import os
 import numpy as np
