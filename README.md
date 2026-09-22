@@ -173,4 +173,6 @@ This project compared greedy decoding and top-p sampling in GPT-2 Small on two a
 
 Muhammad Faizan Kayani (1898693)
 
-NLP · Prof. Kai Kugler · Summer 2026
+**Course:** NLP
+**Instructor:** Prof. Kai Kugler
+**Semester:** Summer 2026
