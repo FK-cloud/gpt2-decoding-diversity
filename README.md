@@ -43,7 +43,7 @@ Most comparisons of these two strategies evaluate a single, fixed generation len
 GPT-2 Small (gpt2, 124M parameters, HuggingFace transformers), used as-is with no fine-tuning.
 
 ### Prompt Set
-20 fixed English prompts, 4 each across 5 themes — News, Narrative, Science, History, Opinion. This is a disclosed, fixed convenience sample chosen for reproducibility, not a validated benchmark.
+20 fixed English prompts, 4 each across 5 themes - News, Narrative, Science, History, Opinion. This is a disclosed, fixed convenience sample chosen for reproducibility, not a validated benchmark.
 
 ### Decoding Conditions
 
@@ -52,7 +52,7 @@ GPT-2 Small (gpt2, 124M parameters, HuggingFace transformers), used as-is with n
 | Greedy | do_sample=False | 1 |
 | Top-p | do_sample=True, top_p=0.9, seeds 11/22/33 | 3 |
 
-Each prompt is generated once to 200 tokens per condition. Rather than generating separately for each length, the 50- and 100-token observations are prefixes of that same 200-token continuation — this keeps the length comparison tied to one underlying generation instead of introducing fresh sampling noise at each length.
+Each prompt is generated once to 200 tokens per condition. Rather than generating separately for each length, the 50- and 100-token observations are prefixes of that same 200-token continuation - this keeps the length comparison tied to one underlying generation instead of introducing fresh sampling noise at each length.
 
 ### Metrics
 - Rep-3 = fraction of repeated 3-grams → lower is better
@@ -61,13 +61,13 @@ Each prompt is generated once to 200 tokens per condition. Rather than generatin
 Both are computed on GPT-2's BPE token IDs, not word-level tokens.
 
 ### Statistical Approach
-Top-p's 3 seeds are averaged per prompt first, so the unit of analysis stays at 20 prompts rather than treating 60 outputs as independent. The main comparison uses a paired bootstrap (5,000 resamples, prompt as the resampling unit, 95% percentile CI) on (top-p − greedy) at each length. A second bootstrap directly tests whether that effect changes between 50 and 200 tokens, using the same resampled prompts at both lengths to keep the pairing intact.
+Top-p's 3 seeds are averaged per prompt first, so the unit of analysis stays at 20 prompts rather than treating 60 outputs as independent. The main comparison uses a paired bootstrap (5,000 resamples, prompt as the resampling unit, 95% percentile CI) on (top-p - greedy) at each length. A second bootstrap directly tests whether that effect changes between 50 and 200 tokens, using the same resampled prompts at both lengths to keep the pairing intact.
 
 ---
 
 ## Results
 
-Top-p sampling was less repetitive and more lexically diverse than greedy decoding at every length tested — and the size of that advantage grew the longer generation continued.
+Top-p sampling was less repetitive and more lexically diverse than greedy decoding at every length tested - and the size of that advantage grew the longer generation continued.
 
 ### Results Summary
 
