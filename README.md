@@ -98,20 +98,20 @@ The contrast is largest here: greedy Rep-3 (0.668) is over 22× top-p's (0.030),
 | Rep-3 | −0.253 | −0.638 | −0.384 | [−0.448, −0.316] |
 | Distinct-2 | +0.274 | +0.618 | +0.344 | [+0.278, +0.406] |
 
-Both change-intervals exclude zero — the widening is not noise. Full precision: results/bootstrap_length_effect.csv.
+Both change-intervals exclude zero - the widening is not noise. Full precision: results/bootstrap_length_effect.csv.
 
 ---
 
 ## Comparative Analysis
 
-Unlike comparisons where the "better" option can flip depending on category, here the direction of the effect never changes — top-p wins on both metrics at every length. What changes is the size of that advantage, and it only grows. This matches the mechanism Holtzman et al. describe: greedy's degeneration isn't a one-time cost, it compounds the longer the model is allowed to run.
+Unlike comparisons where the "better" option can flip depending on category, here the direction of the effect never changes - top-p wins on both metrics at every length. What changes is the size of that advantage, and it only grows. This matches the mechanism Holtzman et al. describe: greedy's degeneration isn't a one-time cost, it compounds the longer the model is allowed to run.
 
 ## Key Findings
 
-1. Both metrics separate the strategies at every length tested — all 6 length × metric comparisons are significant (CI excludes 0).
-2. The gap is not fixed — it grows substantially. Rep-3's disadvantage for greedy nearly triples (−0.253 → −0.638); Distinct-2's more than doubles (+0.274 → +0.618).
+1. Both metrics separate the strategies at every length tested - all 6 length × metric comparisons are significant (CI excludes 0).
+2. The gap is not fixed - it grows substantially. Rep-3's disadvantage for greedy nearly triples (−0.253 → −0.638); Distinct-2's more than doubles (+0.274 → +0.618).
 3. Greedy's own repetition compounds over time — its Rep-3 climbs from 0.261 to 0.668 purely as a function of length, independent of any comparison to top-p.
-4. Top-p stays comparatively flat — Rep-3 never exceeds 0.03, Distinct-2 never drops below 0.92, across all three lengths.
+4. Top-p stays comparatively flat - Rep-3 never exceeds 0.03, Distinct-2 never drops below 0.92, across all three lengths.
 
 ## Hypothesis Evaluation
 
@@ -119,14 +119,14 @@ Unlike comparisons where the "better" option can flip depending on category, her
 
 ## Unexpected Outcome
 
-Going in, the assumption was that top-p might also degrade somewhat with length, just less severely than greedy. That's not what happened — top-p's scores were remarkably flat across all three lengths. Greedy, meanwhile, didn't just stay bad — it got progressively worse. This suggests the "lock-in" effect isn't a fixed penalty greedy pays once, but a compounding one that worsens the longer a single generation runs.
+Going in, the assumption was that top-p might also degrade somewhat with length, just less severely than greedy. That's not what happened - top-p's scores were remarkably flat across all three lengths. Greedy, meanwhile, didn't just stay bad - it got progressively worse. This suggests the "lock-in" effect isn't a fixed penalty greedy pays once, but a compounding one that worsens the longer a single generation runs.
 
 ## Visualization
 
 - effect_size_growth.png — the headline figure: effect size (top-p − greedy) vs. length, both metrics
-- bar_rep3.png, bar_distinct2.png — grouped bars by strategy and length, with CI
-- plot_rep3.png, plot_distinct2.png — line plots of each metric vs. length
-- boxplot_distribution_200tok.png — per-prompt spread at 200 tokens, not just the mean
+- bar_rep3.png, bar_distinct2.png - grouped bars by strategy and length, with CI
+- plot_rep3.png, plot_distinct2.png - line plots of each metric vs. length
+- boxplot_distribution_200tok.png - per-prompt spread at 200 tokens, not just the mean
 
 ## Limitations
 
