@@ -2,8 +2,11 @@
 ### How Decoding Strategy and Generation Length Shape Repetition and Lexical Diversity in GPT-2 Small
 
 **Author:** Muhammad Faizan Kayani (1898693)
+
 **Course:** NLP
+
 **Instructor:** Prof. Kai Kugler
+
 **Semester:** Summer 2026
 
 ---
